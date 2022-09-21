@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="Assests/CSS/phone.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* CSS Reset */
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            background-color: #bcaf77;
+        }
+
+        /* CSS Variables */
+        :root {
+            --navbar-height: 59px;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: #0c0f014d;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+
+
+        #navbar ul {
+            display: flex;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            padding: 0px;
+            font-family: Arial;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+
+        /* unvisited link */
+        a:link {
+            color: black
+        }
+
+        /* visited link */
+        a:visited {
+            color: grey;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: black;
+        }
+
+        /* selected link */
+        a:active {
+            color: grey;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        /* 
+/* Center website */
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        */ h1 {
+            font-size: 50px;
+            word-break: break-all;
+        }
+
+        .row {
+            margin: 10px -16px;
+            background-color: rgb(224, 194, 138)
+        }
+
+        /* Add padding BETWEEN each column */
+        .row,
+        .row>.column {
+            padding: 8px;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33%;
+            display: none;
+            /* Hide all elements by default */
+        }
+
+        /* Clear floats after rows */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 30px;
+        }
+
+        /* The "show" class is added to the filtered elements */
+        .show {
+            display: block;
+        }
+
+        /* Style the buttons */
+        .btn {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        .btn.active {
+            background-color: #666;
+            color: white;
+        }
+
+        .prime {
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 3.8rem;
+            /* position: relative; */
+            font-weight: bold;
+            /* color: #d09603; */
+            padding: 10px;
+            background-color: wheat;
+        }
+
+        .button {
+
+            background-color: #1c87c9;
+            -webkit-border-radius: 60px;
+            border-radius: 10px;
+            border: none;
+            color: #eeeeee;
+            cursor: pointer;
+            display: inline-block;
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-color: #f7f8f7;
+                box-shadow: 0 0 5px #8f918f;
+            }
+
+            50% {
+                background-color: #a1a5a0;
+                box-shadow: 0 0 20px #818181;
+            }
+
+            100% {
+                background-color: lightslategray;
+                box-shadow: lightslategrey;
+            }
+        }
+
+        .button {
+            animation: glowing 2600ms infinite;
+        }
+
+        .content button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: rgb(255, 216, 145);
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+
+        footer {
+            background: black;
+            color: white;
+            padding: 9px 20px;
+            text-align: center;
+
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        /* @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        } */
+
+
+        /* Header/logo Title */
+        .header {
+            padding: 80px;
+            text-align: center;
+            background-image: url("bg.jpg");
+            color: white;
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* Desktops */
+        @media only screen and (max-width : 992px) {
+
+            html,
+            body {
+                /* background-image: url('../../p1.png'); */
+                height: 100%;
+                font-size: 16px;
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+
+                height: 100%;
+                font-size: 20px;
+            }
+
+           
+
+        }
+
+        /* Tablets */
+        @media only screen and (max-width : 768px) {
+
+            html,
+            body {
+                font-family: "Open Sans", sans-serif;
+
+                height: 100%;
+                font-size: 12px;
+
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+
+                font-size: 20px;
+            }
+
+           
+
+
+        }
+
+        /* Phones */
+        @media only screen and (max-width : 480px) {
+
+            html,
+            body {
+                font-family: "Open Sans", sans-serif;
+
+                height: 100%;
+                font-size: 10px;
+
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+                height: 100%;
+                font-size: 20px;
+            }
+
+           
+        }
+
+        /* Custom */
+        @media only screen and (max-width : 320px) {
+
+            html,
+            body {
+                /* background-image: url('../Images/p1.png'); */
+                font-family: "Open Sans", sans-serif;
+                height: 100%;
+                font-size: 8px;
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+                height: 100%;
+                font-size: 20px;
+            }
+
+           
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MAIN (Center website) -->
+    <div class="main">
+        <div class="header">
+            <!-- <img src="Assests/Images/Roomlogo.jpg" -->
+            <h1>Movie Reviewers</h1>
+            <p style="font-weight: bold;">"Lets us choose your favourite movie"</p>
+        </div>
+
+        <nav id="navbar">
+            <!-- <div id="logo">
+                <img src="Assests/Images/logo.jpg" alt="logo">
+            </div> -->
+            <ul>
+                <li class="item"><a href="index.html">Home</a></li>
+                <li class="item"><a href="Store.html">Store</a></li>
+                <li class="item"><a href="Movies.html">Movies</a></li>
+                <li class="item"><a href="contact us.php">Contact Us</a></li>
+            </ul>
+        </nav>
+        <br>
+        <script>
+            var person = prompt("Please enter your name?");
+
+            document.write("Welcome to our Store " + person + "!");
+        </script><br>
+        <br>
+        <h1 class="prime">Our Products</h1>
+        <hr>
+        <br>
+        <div id="myBtnContainer">
+            <h2>Menu</h2><br>
+            <button class="btn active" onclick="filterSelection('all')"><b> Show all</b></button>
+            <button class="btn" onclick="filterSelection('nature')"><b>T-shirts</b> </button>
+            <button class="btn" onclick="filterSelection('cars')"><b>Watches</b> </button>
+            <button class="btn" onclick="filterSelection('people')"><b>Misc</b> </button>
+        </div>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+            <div class="column nature">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/the-neighbours-rr-red-jacket/" target="blank">
+                        <img src="Assests/Images/tshirt1.jpg" alt="T-shirt" style="width:100%">
+                        <h4>The Neighbours RR Red Jacket</h4><br>
+                        <p>$29.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/blue-youre-tearing-me-apart-lisa-t-shirt/"
+                        target="blank">
+                        <img src="Assests/Images/T.jpg" alt="T-shirt" style="width:100%">
+                        <h4>BLUE:You are Tearing Me Apart, Lisa T-Shirt</h4><br>
+                        <p>$13.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/four-tw-official-the-room-t-shirts/"
+                        target="blank">
+                        <img src="Assests/Images/ts.jpg" alt="T-shirts" style="width:100%">
+                        <h4>FOUR TW Official The Room T-Shirts</h4><br>
+                        <p>$24.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="column cars">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/the-assassin-watch-free-love-is-blind-backpack-the-room-blu-ray/"
+                        target="blank">
+                        <img src="Assests/Images/watch.jpg" alt="Watches" style="width:100%">
+                        <h4>"The Assassin" Watch: Free Love Is Blind Backpack & The Room Blu-Ray</h4><br>
+                        <p>$59.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/laides-youre-tearing-me-apart-lisa-watch-2-free-strips-underwear/"
+                        target="blank">
+                        <img src="Assests/Images/watch1.jpg" alt="Watch" style="width:100%">
+                        <h4>Ladies/You're Tearing Me Apart, Lisa! Watch + 2 FREE Strips Underwear</h4><br>
+                        <p>$29.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/princess-penelope-watch-free-love-is-blind-backpack-the-room-blu-ray/"
+                        target="blank">
+                        <img src="Assests/Images/watch2.jpg" alt="Watch" style="width:100%">
+                        <h4>"Princess Penelope" Watch – FREE Love Is Blind Backpack & The Room Blu-Ray</h4><br>
+                        <p>$59.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="column people">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/the-room-dvd-5-beanies/" target="blank">
+                        <img src="Assests/Images/beanie.jpg" alt="Car" style="width:100%">
+                        <h4>The Room DVD Or Blu-Ray & 5 Beanies</h4><br>
+                        <p>$26.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/the-room-cd-soundtrack-one-free-tw-brief/"
+                        target="blank">
+                        <img src="Assests/Images/room.jpg" alt="Car" style="width:100%">
+                        <h4>The ROOM CD Soundtrack & ONE FREE TW Brief</h4><br>
+                        <p>$8.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <a href="http://www.theroommoviestore.com/product/bundle-the-room-script-underwear-love-is-blind-backpack/"
+                        target="blank">
+                        <img src="Assests/Images/bag.jpg" alt="Car" style="width:100%">
+                        <h4>BUNDLE-The Room SCRIPT-Underwear- Love Is Blind Backpack</h4><br>
+                        <p>$29.99</p><br>
+                        <p><button>Add to Cart</button></p>
+                    </a>
+                </div>
+            </div>
+            <h3 class="button"><a href="http://www.theroommoviestore.com/" target="blank">For more Checkout our Store
+                    offical website</h3></a>
+            <!-- END GRID -->
+        </div>
+        <hr>
+        <div id="event">
+            <h1 class="prime">Our Upcoming Shows</h1>
+
+            <table>
+                <tr>
+                    <th>Countries</th>
+                    <th>Theater</th>
+                    <th>Schedule</th>
+                </tr>
+                <tr>
+                    <td>Los Angeles</td>
+                    <td>The Landmark Western</td>
+                    <td><a href="https://www.landmarktheatres.com/los-angeles/the-landmark-westwood"
+                            target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>New Orleans</td>
+                    <td>Prytania Theater</td>
+                    <td><a href="https://www.landmarktheatres.com/houston/river-oaks-theatre" target="blank">Check
+                            availability</td></a>
+                </tr>
+                <tr>
+                    <td>Brookline</td>
+                    <td>Coolidge Corner Theater</td>
+                    <td><a href="https://coolidge.org/" target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>Canada</td>
+                    <td>The Roxy Theater</td>
+                    <td><a href="https://www.rainbowcinemas.ca/A/index.php?" target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>Los Angeles</td>
+                    <td>Regent Theater</td>
+                    <td><a href="https://www.landmarktheatres.com/los-angeles/the-landmark-westwood/film-info/the-room"
+                            target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>Houston,Texas</td>
+                    <td>River Oaks Theater</td>
+                    <td><a href="https://www.landmarktheatres.com/houston/river-oaks-theatre" target="blank">Check
+                            availability</td></a>
+                </tr>
+                <tr>
+                    <td>Alameda, California</td>
+                    <td>Theatre & Cineplex</td>
+                    <td><a href="https://www.alamedatheatres.com/" target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>Philadelphia, Pennsylvania</td>
+                    <td>Ritz East</td>
+                    <td><a href="https://www.landmarktheatres.com/philadelphia/ritz-east" target="blank">Check
+                            availability</td></a>
+                </tr>
+                <tr>
+                    <td>San Francisco</td>
+                    <td>Clay Theater</td>
+                    <td><a href="https://www.landmarktheatres.com/san-francisco/film-info/the-room" target="blank">Check
+                            availability</td></a>
+                </tr>
+
+                <tr>
+                    <td>London, UK</td>
+                    <td>Prince Charles Cinema</td>
+                    <td><a href="https://princecharlescinema.com/PrinceCharlesCinema.dll/Home" target="blank">Check
+                            availability</td></a>
+                </tr>
+
+                <tr>
+                    <td>UK Liverpool, UK</td>
+                    <td>Picture Fact Cinema</td>
+                    <td><a href="https://www.picturehouses.com/" target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>Scotland</td>
+                    <td>Cameo Cinema</td>
+                    <td><a href="https://www.picturehouses.com/" target="blank">Check availability</td></a>
+                </tr>
+                <tr>
+                    <td>San Diego</td>
+                    <td>Ken Cinema</td>
+                    <td><a href="https://www.landmarktheatres.com/san-diego" target="blank">Check availability</td></a>
+                </tr>
+
+            </table>
+
+
+
+            <footer>
+                <div class="center">
+                    Copyright &copy; www.MovieReviewers.com. All rights reserved!
+                </div>
+            </footer>
+        </div>
+
+        <!-- END MAIN -->
+    </div>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+</body>
+
+</html>

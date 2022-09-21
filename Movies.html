@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="Assests/CSS/phone.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Header/logo Title */
+        .header {
+            padding: 80px;
+            text-align: center;
+            background-image: url("bg.jpg");
+            color: white;
+        }
+
+        footer {
+            margin: auto;
+            background: black;
+            color: white;
+            padding: 9px 20px;
+            text-align: center;
+
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* CSS Reset */
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            background-color: #bcaf77;
+        }
+
+        /* CSS Variables */
+        :root {
+            --navbar-height: 59px;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: #0c0f014d;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        #navbar ul {
+            display: flex;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        body {
+            background-color: rgb(255, 254, 254);
+            padding: 0px;
+            font-family: Arial;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+
+        /* unvisited link */
+        a:link {
+            color: black
+        }
+
+        /* visited link */
+        a:visited {
+            color: grey;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: black;
+        }
+
+        /* selected link */
+        a:active {
+            color: grey;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 20px;
+        }
+
+
+        /* Center website */
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .prime {
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 3.8rem;
+            /* position: relative; */
+            font-weight: bold;
+            /* color: #d09603; */
+            padding: 10px;
+            background-color: wheat;
+
+        }
+
+        /* Services Section */
+        #services {
+            margin: 10px;
+            display: inline-block;
+        }
+
+        #services .box {
+            border: 2px solid brown;
+            padding: 34px;
+            margin: 2px 55px;
+            border-radius: 28px;
+            background: #f2f2f2;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        #services .box img {
+            height: 500px;
+            margin: auto;
+            display: block;
+        }
+
+        #services .box p {
+            font-family: 'Baloo Bhai',
+                cursive;
+
+
+        }
+
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        } */
+
+        /* Desktops */
+        @media only screen and (max-width : 992px) {
+
+            html,
+            body {
+                /* background-image: url('../../p1.png'); */
+                height: 100%;
+                font-size: 16px;
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+
+                height: 100%;
+                font-size: 20px;
+            }
+
+
+
+        }
+
+        /* Tablets */
+        @media only screen and (max-width : 768px) {
+
+            html,
+            body {
+                font-family: "Open Sans", sans-serif;
+
+                height: 100%;
+                font-size: 12px;
+
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+
+                font-size: 20px;
+            }
+
+
+
+
+        }
+
+        /* Phones */
+        @media only screen and (max-width : 480px) {
+
+            html,
+            body {
+                font-family: "Open Sans", sans-serif;
+
+                height: 100%;
+                font-size: 10px;
+
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+                height: 100%;
+                font-size: 20px;
+            }
+
+
+        }
+
+        /* Custom */
+        @media only screen and (max-width : 320px) {
+
+            html,
+            body {
+                /* background-image: url('../Images/p1.png'); */
+                font-family: "Open Sans", sans-serif;
+                height: 100%;
+                font-size: 8px;
+            }
+
+            navbar {
+                font-family: "Open Sans", sans-serif;
+                height: 100%;
+                font-size: 20px;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <!-- <img src="Assests/Images/Roomlogo.jpg" -->
+            <h1>Movie Reviewers</h1>
+            <p style="font-weight: bold;">"Lets us choose your favourite movie"</p>
+        </div>
+
+        <nav id="navbar">
+            <!-- <div id="logo">
+                <img src="Assests/Images/logo.jpg" alt="logo">
+            </div> -->
+            <ul>
+                <li class="item"><a href="index.html">Home</a></li>
+                <li class="item"><a href="Store.html">Store</a></li>
+                <li class="item"><a href="Movies.html">Movies</a></li>
+                <li class="item"><a href="Contact us.php">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <h1 class="prime">Movies You may Like</h1>
+
+        <div class="w3-content w3-section">
+            <a href="https://youtu.be/odM92ap8_c0" target="blank"><img class="mySlides" src="Assests/Images/w1.jpg"
+                    style="width:100%"></a>
+            <a href="https://youtu.be/AZGcmvrTX9M" target="blank"><img class="mySlides" src="Assests/Images/Tenet.jpeg"
+                    style="width:100%"></a>
+            <a href="https://youtu.be/J43zOCT0Wy0" target="blank"><img class="mySlides" src="Assests/Images/wall.jpg"
+                    style="width:100%"></a>
+            <a href="https://youtu.be/L6P3nI6VnlY" target="blank"><img class="mySlides" src="Assests/Images/ex.jpg"
+                    style="width:100%"></a>
+
+
+        </div>
+
+        <section id="services-container">
+            <h1 class="prime">Suggestions
+            </h1>
+            <div id="services">
+                <div class="box">
+                    <a href="https://youtu.be/o2AsIXSh2xo" target="blank">
+                        <img src="Assests/Images/s1.png" alt="image">
+                        <h2 class="h-secondary center">BirdBox</h2>
+                        <p class="center">Bird Box is a 2018 American post-apocalyptic horror thriller film directed by
+                            Susanne Bier, following a screenplay written by Eric Heisserer, and based on the 2014 novel
+                            of the same name by Josh Malerman. The film follows the character Malorie Hayes, played by
+                            Sandra Bullock, as she tries to protect herself and two children from entities which push
+                            people who look at them to suicide.</p>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="https://youtu.be/iszwuX1AK6A" target="blank">
+                        <img src="Assests/Images/s2.jpg" alt="image">
+                        <h2 class="h-secondary center">The Wolf of the Wall Street</h2>
+                        <p class="center">The Wolf of Wall Street is a 2013 American epic biographical black comedy
+                            crime film directed by Martin Scorsese and written by Terence Winter, based on the 2007
+                            memoir of the same name by Jordan Belfort. It recounts Belfort's perspective on his career
+                            as a stockbroker in New York City and how his firm, Stratton Oakmont, engaged in rampant
+                            corruption and fraud on Wall Street, which ultimately led to his downfall. Leonardo
+                            DiCaprio, who was also a producer on the film, stars as Belfort, with Jonah Hill as his
+                            business partner and friend, Donnie Azoff, Margot Robbie as his wife, Naomi Lapaglia, and
+                            Kyle Chandler as FBI agent Patrick Denham, who tries to bring Belfort down.</p>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="https://youtu.be/ej3ioOneTy8" target="blank"><img src="Assests/Images/s3.jpg" alt="imag">
+                        <h2 class="h-secondary center">The Martian</h2>
+                        <p class="center">The Martian is a 2015 science fiction film directed by Ridley Scott and
+                            starring Matt Damon. Drew Goddard adapted the screenplay from The Martian, a 2011 novel by
+                            Andy Weir. The film depicts an astronaut's (Damon) lone struggle to survive on Mars after
+                            being left behind, and the efforts of NASA to rescue him and bring him home to Earth. It
+                            also stars Jessica Chastain, Jeff Daniels, Kristen Wiig, Chiwetel Ejiofor, Sean Bean,
+                            Michael Peña, Kate Mara, Sebastian Stan, Aksel Hennie, Mackenzie Davis, Donald Glover, and
+                            Benedict Wong.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="center">
+                Copyright &copy; www.MovieReviewers.com. All rights reserved!
+            </div>
+        </footer>
+
+    </div>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+
+
+</body>
+
+</html>
